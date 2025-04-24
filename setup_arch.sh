@@ -1,0 +1,20 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+#install packages and etc in termux
+termux-change-repo
+termux-setup-storage
+pkg update
+pkg install x11-repo
+pkg install termux-x11-nightly
+pkg install pulseaudio
+pkg install proot-distro
+
+#install arch
+proot-distro install archlinux
+proot-distro login archlinux -c 'pacman -Sy && pacman -Syu && pacman -S sudo && pacman -S xfce4 && useradd -m -G wheel lil_eggy && passwd lil_eggy && nano /etc/sudoers && exit'
+
+#start arch and x11
+wget https://raw.githubusercontent.com/Lil-Eggy/random-termux-files/refs/heads/main/arch.sh
+chmod +x arch.sh
+echo now you can start arch by running ./arch.sh
+pause 
