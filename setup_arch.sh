@@ -9,6 +9,8 @@ pkg install termux-x11-nightly
 pkg install pulseaudio
 pkg install proot-distro
 pkg install nano
+wget https://github.com/termux/termux-x11/releases/download/nightly/app-universal-debug.apk
+termux-open app-universal-debug.apk
 
 #install arch and creates a user called "lil_eggy"
 proot-distro install archlinux
